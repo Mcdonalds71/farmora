@@ -1,313 +1,939 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Farmora — AI Precision Agriculture for Working Farms</title>
-<meta name="description" content="Farmora reads satellite and drone imagery to score field health, predict yield, and flag stressed zones before they cost you a harvest." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Figtree:wght@500;600;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="assets/styles.css?v=1" />
-<link rel="icon" type="image/png" href="assets/logo-mark.png?v=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Farmora | AI for precision agriculture &amp; field intelligence</title>
+  <meta name="description" content="Farmora ingests multispectral satellite NDVI, IoT soil moisture probes, and microclimate telemetry across 480,000+ hectares—detecting moisture deficits, fungal stress, and nitrogen anomalies before visible crop damage." />
+  <meta property="og:title" content="Farmora | AI for precision agriculture &amp; field intelligence" />
+  <meta property="og:description" content="Farmora ingests multispectral satellite NDVI, IoT soil moisture probes, and microclimate telemetry across 480,000+ hectares—detecting moisture deficits, fungal stress, and nitrogen anomalies before visible crop damage." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href="assets/logo-mark.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
-<body>
-<header class="nav" id="nav">
-  <div class="container nav__inner">
-    <a href="index.html" class="brand">
-      <span class="brand__mark"><img src="assets/logo-mark.png?v=1" alt="Farmora logo"></span>
-      Farmora
+<body class="page-home">
+
+  <!-- ======================================================================
+       HEADER / NAVIGATION (Rulebase Floating Architectural Bar)
+       ====================================================================== -->
+  <header class="nav">
+    <a href="index.html" class="nav-logo" aria-label="Farmora — Home">
+      <div class="nav-logo-mark">
+        <img src="assets/logo-mark.png" alt="Farmora" />
+      </div>
+      <span>Farmora</span>
     </a>
-    <nav class="nav__links" id="navLinks">
-      <a href="#product">Product</a>
-      <a href="#how">How it works</a>
-      <a href="#pricing">Pricing</a>
+
+    <nav class="nav-links" aria-label="Primary Navigation">
+      <a href="#platform">Platform</a>
+      <a href="#telemetry">Field Telemetry</a>
+      <a href="#agribusiness">Agribusiness</a>
+      <a href="#console">Console</a>
       <a href="#team">Company</a>
-      <a href="login.html" class="nav__m-only btn btn--line nav__m-login">Log in</a>
-      <a href="signup.html" class="nav__m-only btn btn--green nav__m-demo">Start free</a>
     </nav>
-    <div class="nav__cta">
-      <a href="login.html" class="nav__login">Log in</a>
-      <a href="signup.html" class="btn btn--green">Start free</a>
-    </div>
-    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+
+    <button class="nav-cta trigger-modal">Get Started</button>
+
+    <button class="nav-burger" id="navBurger" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
     </button>
-  </div>
-  <div class="nav__scrim" id="navScrim"></div>
-</header>
+  </header>
 
-<section class="hero">
-  <div class="container hero__inner">
-    <div class="hero__copy">
-      <span class="eyebrow">AI Precision Agriculture</span>
-      <h1>Know which acres need attention today.</h1>
-      <p class="hero__sub">Farmora reads satellite and drone imagery to score field health, predict yield, and flag stressed zones before they cost you a harvest. Live and in active use across working farms.</p>
-      <div class="hero__actions">
-        <a href="signup.html" class="btn btn--green btn--lg">See your farm's AI report</a>
-        <a href="#how" class="btn btn--line btn--lg">See how it works</a>
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-content">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 16px;">
+        <span style="font-weight: 700; color: #FFFFFF; font-size: 18px;">Farmora</span>
+        <button id="mobileDrawerClose" style="color: #FFFFFF; font-size: 20px;">✕</button>
       </div>
-      <p class="hero__note">No credit card required · Set up in a day</p>
-    </div>
-    <div class="field-wrap reveal">
-      <div class="field-yield"><b>8.4 t/ha</b><span>Projected yield</span></div>
-      <div class="field-map">
-        <i class="ok"></i><i class="ok"></i><i class="ok2"></i><i class="ok"></i><i class="stress"></i><i class="ok"></i>
-        <i class="ok2"></i><i class="ok"></i><i class="ok"></i><i class="crit"></i><i class="stress"></i><i class="ok"></i>
-        <i class="ok"></i><i class="ok2"></i><i class="ok"></i><i class="ok"></i><i class="ok"></i><i class="ok2"></i>
-        <i class="stress"></i><i class="ok"></i><i class="ok2"></i><i class="ok"></i><i class="ok"></i><i class="ok"></i>
-        <i class="ok"></i><i class="ok"></i><i class="ok"></i><i class="ok2"></i><i class="ok"></i><i class="ok"></i>
+      <div class="mobile-drawer-links">
+        <a href="#platform">Platform</a>
+        <a href="#telemetry">Field Telemetry</a>
+        <a href="#agribusiness">Agribusiness</a>
+        <a href="#console">Console</a>
+        <a href="#team">Company</a>
       </div>
-      <div class="field-legend">
-        <span class="field-legend__item"><span class="field-legend__dot" style="background:#4CAF50"></span> Healthy</span>
-        <span class="field-legend__item"><span class="field-legend__dot" style="background:#E5A835"></span> Stressed</span>
-        <span class="field-legend__item"><span class="field-legend__dot" style="background:#D64545"></span> Critical</span>
-      </div>
+      <button class="btn-demo-light trigger-modal" style="width: 100%; margin-top: auto;">Get Started</button>
     </div>
   </div>
-</section>
 
-<section class="trust">
-  <div class="container">
-    <p class="trust__label">Trusted by growers and agribusiness teams at</p>
-    <div class="trust__row">
-      <span class="trust__item">Northfield Grain Co.</span>
-      <span class="trust__item">Silverleaf Farms</span>
-      <span class="trust__item">Meridian AgriGroup</span>
-      <span class="trust__item">Cascade Valley Cooperative</span>
-      <span class="trust__item">Brightacre Estates</span>
-    </div>
-  </div>
-</section>
+  <main>
+    <!-- ====================================================================
+         HERO SECTION (50/50 Split Rulebase Blueprint)
+         ==================================================================== -->
+    <section class="hero">
+      <div class="hero-inner">
+        <!-- Left 50% Content -->
+        <div class="hero-content">
 
-<section class="section" id="product">
-  <div class="container">
-    <div class="section-head section-head--center">
-      <span class="eyebrow">What Farmora does</span>
-      <h2 class="h2">Every field, scored the same rigorous way.</h2>
-    </div>
-    <div class="crop-grid">
-      <div class="crop-card">
-        <span class="crop-card__ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><rect x="3" y="3" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="13" y="3" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="13" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="13" y="13" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.6"/></svg></span>
-        <h3>Field health scoring</h3>
-        <p>AI reads satellite and drone imagery to score every field's health, weekly.</p>
-      </div>
-      <div class="crop-card">
-        <span class="crop-card__ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M3 20l4-4 4 4 6-8 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <h3>Yield prediction</h3>
-        <p>Forecasts yield per field, updated automatically as the season progresses.</p>
-      </div>
-      <div class="crop-card">
-        <span class="crop-card__ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M12 3c4 3 7 7 7 11a7 7 0 01-14 0c0-4 3-8 7-11z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
-        <h3>Irrigation optimization</h3>
-        <p>Flags over- and under-watered zones before they show up at harvest.</p>
-      </div>
-      <div class="crop-card">
-        <span class="crop-card__ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <h3>Pest &amp; disease detection</h3>
-        <p>Spots early signs of pest pressure and crop disease from imagery alone.</p>
-      </div>
-    </div>
-  </div>
-</section>
+          <h1 class="hero-h1">
+            See what your fields need before yield is at risk.
+          </h1>
 
-<section class="section section--soft" id="how">
-  <div class="container">
-    <div class="section-head section-head--center">
-      <span class="eyebrow">How it works</span>
-      <h2 class="h2">From imagery to a prioritized action list.</h2>
-    </div>
-    <div class="season-flow">
-      <div class="season-flow__item">
-        <div class="season-flow__n">1</div>
-        <h3>Connect your fields</h3>
-        <p>Draw your field boundaries or connect existing farm-management software.</p>
+          <p class="hero-body">
+            Farmora ingests multispectral satellite NDVI, IoT soil moisture probes, and microclimate telemetry across 480,000+ hectares—detecting moisture deficits, fungal stress, and nitrogen anomalies before visible crop damage.
+          </p>
+
+          <div class="hero-actions">
+            <button class="btn-demo-light trigger-modal">Get Started</button>
+            <a href="#console" class="btn-demo-outline">Explore Console</a>
+          </div>
+
+          <!-- Customer Video Teaser (Rulebase Hero-Mini Component) -->
+          <div class="hero-mini">
+            <img class="hero-mini-thumb" src="assets/hero_video_teaser.jpg" alt="Nigerian Agronomists on Commercial Estate" />
+            <div class="hero-mini-text">
+              <p>Watch how Olam Agri &amp; Flour Mills of Nigeria protected 42,000ha of commercial maize from late-season blight.</p>
+              <div class="hero-mini-link trigger-modal">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 3.5l9 4.5-9 4.5v-9z"/></svg>
+                Watch demo (4K 60FPS)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right 50% Panel: Relief Texture + Floating Live Telemetry Card -->
+        <div class="hero-right-panel">
+          <img class="stone-bg" src="assets/hero_field_relief.jpg" alt="Nigerian Commercial Farmland Contour Relief" />
+          <div class="panel-overlay"></div>
+
+          <div class="hero-chat-card">
+            <div class="chat-messages">
+              <div class="chat-timeline">
+                <div class="chat-typing-row">
+                  <div class="chat-msg-text">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
+                    <span id="heroTypingText"></span><span class="chat-caret"></span>
+                  </div>
+                  <span class="chat-msg-time">Active</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="chat-analyzing">
+              <div class="chat-analyzing-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              </div>
+              <span>Triggering variable-rate precision fertigation sequence...</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="season-flow__item">
-        <div class="season-flow__n">2</div>
-        <h3>AI reads the imagery</h3>
-        <p>Farmora scores every zone from satellite and drone imagery, automatically, every week.</p>
-      </div>
-      <div class="season-flow__item">
-        <div class="season-flow__n">3</div>
-        <h3>Act before harvest</h3>
-        <p>Get a prioritized list of zones that need water, treatment, or a closer look.</p>
+    </section>
+
+    <!-- ====================================================================
+         TRUST MARQUEE BAR (Rulebase Logo Marquee Architecture)
+         ==================================================================== -->
+    <div class="trust-bar">
+      <p class="trust-label">Trusted by leading commercial agribusinesses, outgrower networks, and plantations across Africa</p>
+      <div class="trust-marquee">
+        <div class="trust-track">
+          <div class="trust-logo-pill"><b>OLAM AGRI</b> · Nigeria &amp; Ghana</div>
+          <div class="trust-logo-pill"><b>FLOUR MILLS OF NIGERIA</b> · Agro-Allied</div>
+          <div class="trust-logo-pill"><b>DANGOTE SUGAR ESTATES</b> · Numan</div>
+          <div class="trust-logo-pill"><b>AFEX COMMODITIES</b> · Exchange Network</div>
+          <div class="trust-logo-pill"><b>BUA FOODS</b> · Commercial Estates</div>
+          <div class="trust-logo-pill"><b>COSCHARIS FARMS</b> · Anaku Basin</div>
+          <!-- Duplicate set for seamless continuous marquee -->
+          <div class="trust-logo-pill"><b>OLAM AGRI</b> · Nigeria &amp; Ghana</div>
+          <div class="trust-logo-pill"><b>FLOUR MILLS OF NIGERIA</b> · Agro-Allied</div>
+          <div class="trust-logo-pill"><b>DANGOTE SUGAR ESTATES</b> · Numan</div>
+          <div class="trust-logo-pill"><b>AFEX COMMODITIES</b> · Exchange Network</div>
+          <div class="trust-logo-pill"><b>BUA FOODS</b> · Commercial Estates</div>
+          <div class="trust-logo-pill"><b>COSCHARIS FARMS</b> · Anaku Basin</div>
+        </div>
       </div>
     </div>
 
-    <div class="field-report">
-      <div class="field-report__head">
+    <!-- ====================================================================
+         SECTION 1: THE PRECISION OPERATING SYSTEM (Rulebase Features Grid)
+         ==================================================================== -->
+    <section class="features-section" id="platform">
+      <div class="features-head">
+        <h2>The operating system for commercial agriculture</h2>
+      </div>
+
+      <div class="features-body">
+        <!-- Left Category Selector Tabs -->
+        <div class="features-tabs">
+          <div class="feat-tab active-feat-tab" data-tab="crop">
+            <div class="feat-tab-title">Crop Health &amp; Stress</div>
+            <div class="feat-tab-desc">Review 100% of arable hectares in real time. Multispectral NDVI, pest, and disease triage handled together.</div>
+          </div>
+          <div class="feat-tab dim" data-tab="moisture">
+            <div class="feat-tab-title">Soil Moisture &amp; Irrigation</div>
+            <div class="feat-tab-desc">Continuous root-zone tension tracking mapped to center pivots and automated drip valves.</div>
+          </div>
+          <div class="feat-tab dim" data-tab="nutrient">
+            <div class="feat-tab-title">Nutrient &amp; Carbon Balance</div>
+            <div class="feat-tab-desc">Canopy chlorophyll indexing and variable-rate N-P-K prescription exports for tractors and spray drones.</div>
+          </div>
+        </div>
+
+        <!-- Right 3-Column Interactive Grid -->
+        <div class="features-panels" id="featuresPanelGrid">
+          <div class="features-cards-grid">
+            <!-- Card 1: Score breakdown -->
+            <div class="feature-card">
+              <div class="feature-card-preview">
+                <div class="score-group-label">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                  Low Vigor (Stress Alerts)
+                </div>
+                <div class="score-row">
+                  <span class="score-badge red">28</span>
+                  <span class="score-entity">Sector 14A · Maize</span>
+                  <span class="score-time">3h ago</span>
+                </div>
+                <div class="score-row">
+                  <span class="score-badge red">34</span>
+                  <span class="score-entity">Sector 02C · Cassava</span>
+                  <span class="score-time">5h ago</span>
+                </div>
+
+                <div class="score-group-label" style="margin-top: 20px;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                  High Vigor (Optimal Canopy)
+                </div>
+                <div class="score-row">
+                  <span class="score-badge green">88</span>
+                  <span class="score-entity">Sector 08B · Soybeans</span>
+                  <span class="score-time">1d ago</span>
+                </div>
+                <div class="score-row">
+                  <span class="score-badge green">92</span>
+                  <span class="score-entity">Sector 01A · Cocoa</span>
+                  <span class="score-time">2d ago</span>
+                </div>
+              </div>
+              <div class="feature-card-info">
+                <div class="feature-card-title" id="featCard1Title">Real-time crop vigor on every hectare</div>
+                <div class="feature-card-desc" id="featCard1Desc">Every parcel observed and scored automatically against historic NDVI baselines. Fungal stress, emergence failures, and leaf wilting checked together.</div>
+              </div>
+            </div>
+
+            <!-- Card 2: Prescriptive Action Task Card -->
+            <div class="feature-card">
+              <div class="feature-card-preview">
+                <div class="task-mini-card">
+                  <div class="task-user-header">
+                    <img src="assets/team/chinedu_bakare.jpg" alt="Chinedu Bakare" />
+                    <span>Engr. Chinedu Bakare · Ops Lead</span>
+                  </div>
+                  <div class="task-body-title">
+                    <span>Moisture Deficit Protocol</span>
+                    <span style="font-family: var(--font-mono); font-size: 11px; color: var(--color-subtle);">15 mins</span>
+                  </div>
+                  <div class="task-body-desc">
+                    Soil moisture probe #08 fell below wilting point (16.2%). Evapotranspiration peak forecasted in 4 hours.
+                  </div>
+                  <button class="btn-task-action trigger-modal">Dispatch Irrigation</button>
+                </div>
+              </div>
+              <div class="feature-card-info">
+                <div class="feature-card-title" id="featCard2Title">Autonomous agronomic prescription</div>
+                <div class="feature-card-desc" id="featCard2Desc">Turn sensor anomalies into actionable variable-rate field directives instantly. No more slow manual spreadsheet scouting.</div>
+              </div>
+            </div>
+
+            <!-- Card 3: Real-Time Field Alerting -->
+            <div class="feature-card">
+              <div class="feature-card-preview">
+                <div class="alert-mini-card">
+                  <div class="alert-header-red">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7"/></svg>
+                    Pathogen &amp; Pest Intake
+                  </div>
+                  <div class="alert-item-list">
+                    <div class="alert-item-row">
+                      <span>Early leaf blight detected</span>
+                      <span class="alert-item-time">Just now</span>
+                    </div>
+                    <div class="alert-item-row">
+                      <span>Stem borer egg masses on border</span>
+                      <span class="alert-item-time">2m ago</span>
+                    </div>
+                    <div class="alert-item-row">
+                      <span>Nitrogen leaching post-storm</span>
+                      <span class="alert-item-time">6m ago</span>
+                    </div>
+                  </div>
+                  <div class="alert-response-box">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+                    <span>Leaf wetness duration exceeded 9 hours. Autonomous drone spot-spray queued for 06:00 tomorrow.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="feature-card-info">
+                <div class="feature-card-title" id="featCard3Title">Early disease &amp; pest intake</div>
+                <div class="feature-card-desc" id="featCard3Desc">Catch pathogen pressure, armyworm defoliation, and moisture stress the exact day they develop.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Supporting Workflow Nodes (Rulebase Workflow Connector Row) -->
+          <div class="workflow-nodes-grid">
+            <div class="workflow-card">
+              <div style="font-size: 13px; font-weight: 600; color: var(--color-crit); display: flex; align-items: center; gap: 8px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+                Canopy moisture deficit: Sector 09 Maize
+              </div>
+              <div class="workflow-timeline">
+                <div class="wf-step">
+                  <span class="wf-dot"></span>
+                  <div class="wf-step-content">
+                    <b>Received &amp; Classified</b>
+                    <span>Multispectral Sentinel-2 band 8A reflectance tagged</span>
+                  </div>
+                </div>
+                <div class="wf-step">
+                  <span class="wf-dot"></span>
+                  <div class="wf-step-content">
+                    <b>Routed to Estate Agronomist</b>
+                    <span>Assigned to Niger State Regional Command</span>
+                  </div>
+                </div>
+                <div class="wf-step">
+                  <span class="wf-dot amber"></span>
+                  <div class="wf-step-content">
+                    <b>Prescription in Progress</b>
+                    <span>Pivot 02 flow rate adjusted +28% automatically</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="workflow-card">
+              <div style="font-size: 13px; font-weight: 600; color: var(--color-text);">
+                Workflows on Autopilot
+              </div>
+              <p style="font-size: 13px; color: var(--color-muted); line-height: 1.5;">
+                Turn agronomic insights into action: dispatch spray drones, adjust center pivot pumps, document crop scouting logs, and forecast harvest dates without human delay.
+              </p>
+              <div class="workflow-autopilot-badges" style="margin-top: auto;">
+                <span class="trust-logo-pill" style="font-size: 11px;">Route to spray team</span>
+                <span class="trust-logo-pill" style="font-size: 11px;">Log to CAC compliance</span>
+                <span class="trust-logo-pill" style="font-size: 11px;">Update harvest model</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 2: PROOF & SOCIAL METRICS STRIP (Rulebase Social Section)
+         ==================================================================== -->
+    <section class="social-section" id="agribusiness">
+      <div class="social-inner">
+        <div class="social-left">
+          <h2>See how commercial agribusinesses prevent crop loss and scale yield 3x faster.</h2>
+          <div class="social-stats">
+            <div class="stat-item">
+              <div class="stat-num">34%</div>
+              <div class="stat-label">Average yield increase per hectare</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">41%</div>
+              <div class="stat-label">Reduction in fertilizer &amp; water waste</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">480k+</div>
+              <div class="stat-label">Hectares monitored across Africa</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-right">
+          <blockquote class="social-quote">
+            "With Farmora, our agronomy teams caught early leaf blight across 3,200 hectares in Niger State nearly three weeks before it became visible to scouts walking the rows. It saved our entire late-season maize harvest."
+          </blockquote>
+          <div class="social-attributor">
+            <img class="social-avatar" src="assets/team/folake_adeleke.jpg" alt="Dr. Folake Adeleke" />
+            <div class="social-who">
+              <b>Dr. Folake Adeleke</b>
+              <span>Head of Agronomic Science &amp; Outgrower Operations, Olam Nigeria</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 3: WORKFORCE DEEP-DIVE SYSTEM (Rulebase Workforce Section)
+         ==================================================================== -->
+    <section class="workforce-section" id="telemetry">
+      <div class="wf-header">
+        <h2>Catch every stress event, deploy targeted inputs, and protect crop margins.</h2>
+        <p>Autonomous AI agents inspect every hectare across the entire season lifecycle, catching disease early and guiding field teams until harvest completes.</p>
+      </div>
+
+      <div class="wf-outer-tabs">
+        <button class="wf-outer-tab-btn active">Field Health &amp; Telemetry</button>
+        <button class="wf-outer-tab-btn">Yield Forecasting &amp; Harvest Ops</button>
+      </div>
+
+      <div class="wf-content-grid">
+        <!-- Accordion List Left -->
+        <div class="wf-accordion-list">
+          <div class="wf-accordion-item active" data-acc="drone">
+            <div class="wf-acc-info">
+              <h3>Autonomous Drone Scout Routing</h3>
+              <p>Target high-stress anomaly coordinates automatically without wandering random crop rows.</p>
+            </div>
+            <div class="wf-acc-btn">→</div>
+          </div>
+
+          <div class="wf-accordion-item" data-acc="nutrient">
+            <div class="wf-acc-info">
+              <h3>Variable-Rate Nutrient Prescriptions</h3>
+              <p>Turn red-edge chlorophyll reflectance directly into precision spray maps for tractors and drones.</p>
+            </div>
+            <div class="wf-acc-btn">→</div>
+          </div>
+
+          <div class="wf-accordion-item" data-acc="harvest">
+            <div class="wf-acc-info">
+              <h3>Predictive Harvest Moisture Index</h3>
+              <p>Forecast exact kernel dry-down curves to dispatch combine harvesters at maximum market value.</p>
+            </div>
+            <div class="wf-acc-btn">→</div>
+          </div>
+        </div>
+
+        <!-- High-Fidelity Diagnostic Card Right -->
+        <div class="wf-diagnostic-card">
+          <div class="diag-score-row">
+            <div class="diag-score-donut" id="diagScoreNumber">96</div>
+            <div class="diag-score-info">
+              <b id="diagScoreTitle">Autonomous Scout Coverage</b>
+              <p id="diagScoreSub">DJI Agras T40 coordinated flight plan — 480ha scanned in 3.4 hrs.</p>
+            </div>
+          </div>
+
+          <div class="diag-checklist" id="diagCheckList">
+            <div class="diag-check-item">
+              <span class="diag-check-label">Canopy thermal envelope within normal range?</span>
+              <span class="diag-check-pill">Passed 98/100</span>
+            </div>
+            <div class="diag-check-item">
+              <span class="diag-check-label">Edge weed infestation below 4% threshold?</span>
+              <span class="diag-check-pill">Passed</span>
+            </div>
+            <div class="diag-check-item">
+              <span class="diag-check-label">Emergence stand count matches seed plan?</span>
+              <span class="diag-check-pill">Passed 97%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 4: DARK IMPACT STATEMENT (Rulebase Problem Section)
+         ==================================================================== -->
+    <section class="problem-scroll">
+      <div class="problem-statement-wrap">
+        <p class="problem-statement-text">
+          Today, commercial estates inspect less than 5% of their arable acres by foot. Crop stress hides in the rest. Moisture deficits become permanent wilt, and harvest margins vanish.
+        </p>
+
+        <div class="problem-floating-card">
+          <div class="problem-floating-header">
+            <img src="assets/team/tochukwu_okereke.jpg" alt="Tochukwu Okereke" />
+            <span>Sector 14B · Alert Triggered</span>
+          </div>
+          <div class="problem-floating-desc">
+            Vigor dropped -18% in 48 hours. Nitrogen leaching confirmed post-storm.
+          </div>
+          <div class="problem-floating-time">
+            Action: 120kg/ha urea top-dressing queued
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 5: INTEGRATION MATRIX (Rulebase 3-Row Grid with Glowing Center)
+         ==================================================================== -->
+    <section class="integrations-section">
+      <div class="int-header">
+        <h2>Connects directly to the machinery and sensors you already own.</h2>
+        <p>Farmora ingests telemetry from John Deere, DJI Agras, Trimble, Sentera, and soil probes without disrupting how your farm operates.</p>
+      </div>
+
+      <div class="integrations-grid-container">
+        <!-- Row 1 -->
+        <div class="integrations-row">
+          <div class="int-tile">John Deere</div>
+          <div class="int-tile">DJI Agras</div>
+          <div class="int-tile">Trimble Ag</div>
+          <div class="int-tile">Sentera</div>
+          <div class="int-tile">CropX Probes</div>
+          <div class="int-tile">PlanetScope</div>
+          <div class="int-tile">Sentinel-2</div>
+        </div>
+
+        <!-- Row 2 with glowing center product icon -->
+        <div class="integrations-row">
+          <div class="int-tile">Case IH</div>
+          <div class="int-tile">AFEX Trade</div>
+          <div class="int-tile">Netafim Drip</div>
+          <div class="int-tile center-highlight" title="Farmora Core Intelligence Engine">
+            <img src="assets/logo-mark.png" alt="Farmora" />
+          </div>
+          <div class="int-tile">Valley Pivot</div>
+          <div class="int-tile">Lindsay Zim</div>
+          <div class="int-tile">Davis Weather</div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="integrations-row">
+          <div class="int-tile">SAP Agri</div>
+          <div class="int-tile">NetSuite ERP</div>
+          <div class="int-tile">Microsoft Azure</div>
+          <div class="int-tile">Odoo Farm</div>
+          <div class="int-tile">Farmforce</div>
+          <div class="int-tile">QGIS Engine</div>
+          <div class="int-tile">ESRI ArcGIS</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 6: INTERACTIVE AGRONOMIC CONSOLE (Rulebase Catch Section)
+         ==================================================================== -->
+    <section class="catch-section" id="console">
+      <div class="catch-header">
+        <h2>Observe every hectare. Act on what the AI finds.</h2>
+        <div class="catch-right">
+          <p>The complete spatial operating console for estate agronomists, farm managers, and regional directors.</p>
+          <button class="btn-demo-light trigger-modal" style="background: var(--color-forest); color: #FFFFFF; border-color: var(--color-forest);">Explore Live Sandbox</button>
+        </div>
+      </div>
+
+      <!-- Application Frame Window -->
+      <div class="console-window">
+        <div class="console-titlebar">
+          <div class="window-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="console-breadcrumb">
+            Farmora Agrisystems &gt; Mokwa Commercial Estate &gt; Sector 12B Hybrid Yellow Maize
+          </div>
+          <div style="font-family: var(--font-mono); font-size: 11px; color: #16A34A; display: flex; align-items: center; gap: 6px;">
+            <span style="width: 6px; height: 6px; border-radius: 50%; background: #16A34A;"></span> Cloud Connected
+          </div>
+        </div>
+
+        <div class="console-body">
+          <!-- Left Sidebar Rail -->
+          <div class="console-rail">
+            <div class="console-estate-selector">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+              <span>Mokwa Estate (Niger State)</span>
+            </div>
+
+            <div>
+              <div class="console-nav-group-title">Spectral Analytics</div>
+              <div class="console-nav-item active">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                NDVI Vigor Layer
+              </div>
+              <div class="console-nav-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                Canopy Chlorophyll (NDRE)
+              </div>
+              <div class="console-nav-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
+                Thermal Stress Envelope
+              </div>
+            </div>
+
+            <div>
+              <div class="console-nav-group-title">Hardware Telemetry</div>
+              <div class="console-nav-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a7 7 0 00-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 00-7-7z"/></svg>
+                16 Soil Moisture Probes
+              </div>
+              <div class="console-nav-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg>
+                DJI Flight Paths (Mission 08)
+              </div>
+              <div class="console-nav-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg>
+                Davis Weather Station
+              </div>
+            </div>
+          </div>
+
+          <!-- Main Interactive Map Viewport -->
+          <div class="console-map-viewport">
+            <div class="console-map-toolbar">
+              <button class="map-layer-btn active" data-layer="ndvi">NDVI Heatmap</button>
+              <button class="map-layer-btn" data-layer="truecolor">True Color Aerial</button>
+              <button class="map-layer-btn" data-layer="moisture">Root Zone Moisture</button>
+              <button class="map-layer-btn" data-layer="stress">Stress Zones Only</button>
+            </div>
+
+            <img id="consoleSatelliteImg" class="console-satellite-img" src="assets/field_satellite_ndvi.jpg" alt="Satellite Field Heatmap" />
+
+            <div class="console-map-legend">
+              <div>NDVI Vegetation Index (0.1 - 0.95)</div>
+              <div class="legend-bar"></div>
+            </div>
+          </div>
+
+          <!-- Right Inspector Panel -->
+          <div class="console-inspector">
+            <div class="inspector-header">
+              <b>Parcel #12B Diagnostics</b>
+              <span>420 hectares · Planted 14 May · Maize SC645</span>
+            </div>
+
+            <div class="inspector-vigor-meter">
+              <div class="meter-circle">88%</div>
+              <div class="meter-text">
+                <b>Optimal Canopy Vigor</b>
+                <span>+6% above historical 5yr trend</span>
+              </div>
+            </div>
+
+            <div class="inspector-probes-list">
+              <div class="probe-item">
+                <div class="probe-item-header">
+                  <span>Soil Moisture (0-30cm depth)</span>
+                  <span>24.8% (Optimal)</span>
+                </div>
+                <div class="probe-progress">
+                  <div class="probe-bar" style="width: 78%; background: #16A34A;"></div>
+                </div>
+              </div>
+
+              <div class="probe-item">
+                <div class="probe-item-header">
+                  <span>Soil Moisture (30-60cm subsoil)</span>
+                  <span>19.4% (Adequate)</span>
+                </div>
+                <div class="probe-progress">
+                  <div class="probe-bar" style="width: 62%; background: #3B82F6;"></div>
+                </div>
+              </div>
+
+              <div class="probe-item">
+                <div class="probe-item-header">
+                  <span>Nitrogen Sufficiency Index</span>
+                  <span>84 / 100</span>
+                </div>
+                <div class="probe-progress">
+                  <div class="probe-bar" style="width: 84%; background: #F59E0B;"></div>
+                </div>
+              </div>
+
+              <div class="probe-item">
+                <div class="probe-item-header">
+                  <span>Evapotranspiration (ETc)</span>
+                  <span>4.2 mm/day</span>
+                </div>
+                <div class="probe-progress">
+                  <div class="probe-bar" style="width: 48%; background: #183A2B;"></div>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn-export-shapefile trigger-modal">
+              Export Variable Prescription (.SHP)
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 7: AUTHENTIC NIGERIAN LEADERSHIP TEAM (Mandatory Rule)
+         ==================================================================== -->
+    <section class="team-section" id="team">
+      <div class="team-inner">
+        <div class="team-header">
+          <h2>Built by agronomists and AI engineers who know African soil.</h2>
+          <p>Built in Nigeria · Expanding across Africa · Powering 480,000+ commercial hectares.</p>
+        </div>
+
+        <div class="team-grid">
+          <!-- Team Member 1 -->
+          <div class="team-card">
+            <div class="team-photo-wrap">
+              <img class="team-photo" src="assets/team/ebele_nnaji.jpg" alt="Ebele Nnaji" />
+            </div>
+            <div class="team-card-info">
+              <h3 class="team-name">Ebele Nnaji</h3>
+              <div class="team-role">Co-founder &amp; CEO</div>
+              <p class="team-bio">Raised on commercial grain farmland in Kaduna; formerly led operational agronomy at regional agro-cooperatives before founding Farmora.</p>
+              <div class="team-card-footer">
+                <span style="font-size: 11px; font-family: var(--font-mono); color: var(--color-muted);">Lagos, Nigeria</span>
+                <a class="team-social-link" href="https://linkedin.com" target="_blank" rel="noopener" aria-label="Ebele Nnaji LinkedIn">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25a1.64 1.64 0 0 0-1.66 1.64c0 .9.74 1.63 1.66 1.63.92 0 1.66-.73 1.66-1.63 0-.9-.74-1.64-1.66-1.64z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Member 2 -->
+          <div class="team-card">
+            <div class="team-photo-wrap">
+              <img class="team-photo" src="assets/team/tochukwu_okereke.jpg" alt="Tochukwu Okereke" />
+            </div>
+            <div class="team-card-info">
+              <h3 class="team-name">Tochukwu Okereke</h3>
+              <div class="team-role">Co-founder &amp; CTO</div>
+              <p class="team-bio">Satellite remote-sensing researcher and computer vision architect; built crop canopy stress detection models at African technology hubs.</p>
+              <div class="team-card-footer">
+                <span style="font-size: 11px; font-family: var(--font-mono); color: var(--color-muted);">Lagos, Nigeria</span>
+                <a class="team-social-link" href="https://linkedin.com" target="_blank" rel="noopener" aria-label="Tochukwu Okereke LinkedIn">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25a1.64 1.64 0 0 0-1.66 1.64c0 .9.74 1.63 1.66 1.63.92 0 1.66-.73 1.66-1.63 0-.9-.74-1.64-1.66-1.64z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Member 3 -->
+          <div class="team-card">
+            <div class="team-photo-wrap">
+              <img class="team-photo" src="assets/team/folake_adeleke.jpg" alt="Dr. Folake Adeleke" />
+            </div>
+            <div class="team-card-info">
+              <h3 class="team-name">Dr. Folake Adeleke</h3>
+              <div class="team-role">Head of Agronomic Science</div>
+              <p class="team-bio">PhD in Plant Pathology; 12+ years optimizing commercial grain and outgrower yields across Nigeria, Ghana, and Côte d'Ivoire.</p>
+              <div class="team-card-footer">
+                <span style="font-size: 11px; font-family: var(--font-mono); color: var(--color-muted);">Ibadan, Nigeria</span>
+                <a class="team-social-link" href="https://linkedin.com" target="_blank" rel="noopener" aria-label="Dr. Folake Adeleke LinkedIn">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25a1.64 1.64 0 0 0-1.66 1.64c0 .9.74 1.63 1.66 1.63.92 0 1.66-.73 1.66-1.63 0-.9-.74-1.64-1.66-1.64z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Member 4 -->
+          <div class="team-card">
+            <div class="team-photo-wrap">
+              <img class="team-photo" src="assets/team/chinedu_bakare.jpg" alt="Chinedu Bakare" />
+            </div>
+            <div class="team-card-info">
+              <h3 class="team-name">Chinedu Bakare</h3>
+              <div class="team-role">VP of Field Operations</div>
+              <p class="team-bio">Agricultural mechanization specialist; previously deployed commercial drone spray fleets and IoT soil moisture networks across 200,000ha.</p>
+              <div class="team-card-footer">
+                <span style="font-size: 11px; font-family: var(--font-mono); color: var(--color-muted);">Abuja, Nigeria</span>
+                <a class="team-social-link" href="https://linkedin.com" target="_blank" rel="noopener" aria-label="Chinedu Bakare LinkedIn">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25a1.64 1.64 0 0 0-1.66 1.64c0 .9.74 1.63 1.66 1.63.92 0 1.66-.73 1.66-1.63 0-.9-.74-1.64-1.66-1.64z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 8: BOTTOM CTA BANNER
+         ==================================================================== -->
+    <section class="bottom-cta-section">
+      <div class="bottom-cta-inner">
+        <h2>Deploy field intelligence across your hectares before the next rain.</h2>
+        <p>Join commercial agricultural leaders across Nigeria and Africa who trust Farmora to safeguard their yield and automate precision operations.</p>
+        <div class="bottom-cta-actions">
+          <button class="btn-demo-light trigger-modal">Get Started</button>
+          <a href="#console" class="btn-demo-outline">Inspect Sandbox</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================================================================
+       REGULATORY FOOTER (Mandatory Rule)
+       ====================================================================== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <b>Farmora Agrisystems</b>
+          <p>AI field intelligence and precision yield forecasting for commercial agriculture across Nigeria and Africa.</p>
+          <div class="footer-badges">
+            <div class="cert-badge">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>SOC 2 TYPE II</span>
+            </div>
+            <div class="cert-badge">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <span>NDPR COMPLIANT</span>
+            </div>
+            <div class="cert-badge">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>ISO 27001</span>
+            </div>
+          </div>
+        </div>
+
         <div>
-          <b>North Ridge — Field 12 Report</b>
-          <span>18.4 hectares · updated 2 days ago</span>
+          <div class="footer-col-title">Platform</div>
+          <div class="footer-col-links">
+            <a href="#platform">Crop Health Scoring</a>
+            <a href="#telemetry">Soil Moisture Sensing</a>
+            <a href="#telemetry">Chlorophyll Indexing</a>
+            <a href="#console">Spatial Console</a>
+            <a href="#agribusiness">Variable Spray Maps</a>
+          </div>
         </div>
-        <span class="field-report__badge">2 zones flagged</span>
-      </div>
-      <div class="field-row">
-        <div><b>Overall field health</b><span>82 / 100, trending stable</span></div>
-        <span class="status-pill status-pill--ok">Healthy</span>
-      </div>
-      <div class="field-row">
-        <div><b>Irrigation</b><span>Zone C under-watered for 6 days</span></div>
-        <span class="status-pill status-pill--warn">Attention</span>
-      </div>
-      <div class="field-row">
-        <div><b>Pest pressure</b><span>Early aphid activity detected, east edge</span></div>
-        <span class="status-pill status-pill--warn">Attention</span>
-      </div>
-      <div class="field-row">
-        <div><b>Yield forecast</b><span>8.4 t/ha, +6% vs. last season</span></div>
-        <span class="status-pill status-pill--ok">On track</span>
-      </div>
-    </div>
 
-    <div class="stat-row3">
-      <div class="stat-cell4">
-        <div class="stat-cell4__num"><span class="count" data-to="340">0</span></div>
-        <div class="stat-cell4__label">Farms live on Farmora</div>
-      </div>
-      <div class="stat-cell4">
-        <div class="stat-cell4__num"><span class="count" data-to="128">0</span>k</div>
-        <div class="stat-cell4__label">Acres monitored</div>
-      </div>
-      <div class="stat-cell4">
-        <div class="stat-cell4__num"><span class="count" data-to="91">0</span>%</div>
-        <div class="stat-cell4__label">Early-stress detection accuracy (self-reported)</div>
-      </div>
-    </div>
-  </div>
-</section>
+        <div>
+          <div class="footer-col-title">Integrations</div>
+          <div class="footer-col-links">
+            <a href="#platform">John Deere Operations</a>
+            <a href="#platform">DJI Agras Drone Fleets</a>
+            <a href="#platform">Sentinel-2 &amp; Landsat</a>
+            <a href="#platform">AFEX Commodities</a>
+            <a href="#platform">SAP Agribusiness</a>
+          </div>
+        </div>
 
-<section class="section" id="pricing">
-  <div class="container">
-    <div class="section-head section-head--center">
-      <span class="eyebrow">Pricing</span>
-      <h2 class="h2">Straightforward plans, transparent pricing.</h2>
-    </div>
-    <div class="price-row">
-      <div class="price-card">
-        <div class="price-card__name">Starter</div>
-        <div class="price-card__amt">$229<span>/month</span></div>
-        <p class="lead" style="margin-top:10px;font-size:.88rem">For single-farm operations.</p>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Up to 500 acres monitored</li>
-          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Field health scoring</li>
-          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Email support</li>
-        </ul>
-        <a href="signup.html" class="btn btn--line">Start free</a>
-      </div>
-      <div class="price-card price-card--hi">
-        <div class="price-card__name">Team</div>
-        <div class="price-card__amt">$649<span>/month</span></div>
-        <p class="lead" style="margin-top:10px;font-size:.88rem">For agribusiness and multi-farm operations.</p>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Up to 5,000 acres monitored</li>
-          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Everything in Starter</li>
-          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Yield prediction &amp; irrigation optimization</li>
-          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Pest &amp; disease detection</li>
-          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Priority support</li>
-        </ul>
-        <a href="signup.html" class="btn btn--green">Start free</a>
-      </div>
-    </div>
-    <p style="text-align:center;margin-top:26px;font-size:.82rem;color:var(--soil-500)">No credit card required to start · Cancel anytime</p>
-  </div>
-</section>
+        <div>
+          <div class="footer-col-title">Company</div>
+          <div class="footer-col-links">
+            <a href="#team">Leadership Team</a>
+            <a href="#team">Research &amp; Science</a>
+            <a href="login.html">Agribusiness Login</a>
+            <a href="signup.html">Request Field Demo</a>
+            <a href="mailto:operations@farmora.ai">Media Inquiries</a>
+          </div>
+        </div>
 
-<section class="section section--soft">
-  <div class="container">
-    <div class="quote-block">
-      <span class="quote-block__mark">"</span>
-      <p>Farmora caught a pest outbreak in our east field five days before we would have seen it walking the rows. That's a harvest saved.</p>
-      <p class="quote-block__who">Owen Marsh — Farm Operations Director, Silverleaf Farms</p>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="team">
-  <div class="container">
-    <div class="section-head section-head--center">
-      <span class="eyebrow">Company</span>
-      <h2 class="h2">Built by people who've walked the rows.</h2>
-    </div>
-    <div class="team-row8">
-      <div class="member-card3">
-        <div class="member-card3__ph">EN</div>
-        <h3>Ebele Nnaji</h3>
-        <div class="role">Co-founder &amp; CEO</div>
-        <p>Grew up on a family farm and later ran agronomy operations for a regional grain cooperative before starting Farmora.</p>
-        <p style="margin-top:6px"><a href="mailto:ebele@farmora.io" style="color:var(--green-600);font-weight:600">ebele@farmora.io</a></p>
-        <div class="member-card3__socials">
-          <a class="li" href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#0A66C2"/><path d="M7.4 9.6H4.9V19h2.5V9.6zM6.15 8.5a1.45 1.45 0 100-2.9 1.45 1.45 0 000 2.9zM19.1 19h-2.5v-4.9c0-1.17-.42-1.97-1.47-1.97-.8 0-1.28.54-1.49 1.06-.08.19-.1.45-.1.71V19H11c0-6.8 0-9.4 0-9.4h2.54v1.33c.34-.52.94-1.27 2.3-1.27 1.68 0 2.96 1.1 2.96 3.45V19z" fill="#fff"/></svg></a>
+        <div>
+          <div class="footer-col-title">Security &amp; Legal</div>
+          <div class="footer-col-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="privacy.html">Data Sovereignty</a>
+            <a href="terms.html">Outgrower SLA</a>
+            <a href="terms.html">Security Architecture</a>
+          </div>
         </div>
       </div>
-      <div class="member-card3">
-        <div class="member-card3__ph">TO</div>
-        <h3>Tochukwu Okereke</h3>
-        <div class="role">Co-founder &amp; Head of AI</div>
-        <p>Built satellite-imagery analysis models before turning that experience toward precision agriculture.</p>
-        <p style="margin-top:6px"><a href="mailto:tochukwu@farmora.io" style="color:var(--green-600);font-weight:600">tochukwu@farmora.io</a></p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="section">
-  <div class="container">
-    <div class="cta-field">
-      <span class="eyebrow" style="color:#8BD98E">Start free</span>
-      <h2>See what's happening in every field.</h2>
-      <p class="lead">Connect your fields and get your first health report today.</p>
-      <div class="cta-field__actions">
-        <a href="signup.html" class="btn btn--green btn--lg">See your farm's AI report</a>
-        <a href="#how" class="btn btn--line btn--lg">See how it works</a>
-      </div>
-      <p class="cta-field__note">No credit card required</p>
-    </div>
-  </div>
-</section>
+      <div class="footer-bottom">
+        <div class="footer-legal-line">
+          <div>
+            <b>Farmora Agrisystems Technologies Nigeria Limited</b> · CAC / RC Registration: <b>RC 1894021</b>
+          </div>
+          <div class="footer-social-icons">
+            <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25a1.64 1.64 0 0 0-1.66 1.64c0 .9.74 1.63 1.66 1.63.92 0 1.66-.73 1.66-1.63 0-.9-.74-1.64-1.66-1.64z"/></svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+            </a>
+          </div>
+        </div>
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer__top">
-      <div>
-        <a href="index.html" class="brand"><span class="brand__mark"><img src="assets/logo-mark.png?v=1" alt="Farmora logo"></span>Farmora</a>
-        <p class="footer__about">AI precision agriculture for farms that can't afford to guess.</p>
-        <div class="footer__socials" style="margin-top:16px">
-          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#0A66C2"/><path d="M7.4 9.6H4.9V19h2.5V9.6zM6.15 8.5a1.45 1.45 0 100-2.9 1.45 1.45 0 000 2.9zM19.1 19h-2.5v-4.9c0-1.17-.42-1.97-1.47-1.97-.8 0-1.28.54-1.49 1.06-.08.19-.1.45-.1.71V19H11c0-6.8 0-9.4 0-9.4h2.54v1.33c.34-.52.94-1.27 2.3-1.27 1.68 0 2.96 1.1 2.96 3.45V19z" fill="#fff"/></svg></a>
-          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#1877F2"/><path d="M15.1 12.8h-2v6.7h-2.8v-6.7H8.9v-2.4h1.4V9c0-1.9 1-3 3.2-3h1.9v2.4h-1.2c-.9 0-1 .3-1 1v1h2.2l-.3 2.4z" fill="#fff"/></svg></a>
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+          <span>Plot 14, Commercial Avenue, Ikeja Industrial Estate, Lagos, Nigeria · Tel: +234 1 888 3920</span>
+          <span>&copy; 2026 Farmora Agrisystems Technologies Nigeria Limited. All rights reserved.</span>
         </div>
       </div>
-      <div>
-        <h4>Product</h4>
-        <ul>
-          <li><a href="#product">Product</a></li>
-          <li><a href="#how">How it works</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Company</h4>
-        <ul>
-          <li><a href="#team">Company</a></li>
-          <li><a href="privacy.html">Privacy</a></li>
-          <li><a href="terms.html">Terms</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:hello@farmora.io">hello@farmora.io</a></li>
-          <li><a href="mailto:press@farmora.io">press@farmora.io</a></li>
-        </ul>
-      </div>
     </div>
-    <div class="footer__bottom">
-      <span>© 2026 Farmora, Inc. All rights reserved.</span>
+  </footer>
+
+  <!-- ======================================================================
+       ENTERPRISE SSO & AZURE PROVISIONING MODAL (AGENTS.md Rule 3)
+       ====================================================================== -->
+  <div class="modal-overlay" id="enterpriseModal" aria-modal="true" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <h3>Access Farmora Enterprise</h3>
+          <p>Single sign-on for agribusinesses, cooperatives &amp; plantations</p>
+        </div>
+        <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- SSO Providers Group -->
+        <div class="sso-buttons-group">
+          <button class="btn-sso" id="ssoEntra">
+            <svg viewBox="0 0 23 23">
+              <path fill="#f35325" d="M1 1h10v10H1z"/>
+              <path fill="#81bc06" d="M12 1h10v10H12z"/>
+              <path fill="#05a6f0" d="M1 12h10v10H1z"/>
+              <path fill="#ffba08" d="M12 12h10v10H12z"/>
+            </svg>
+            Sign in with Microsoft Entra ID
+          </button>
+          <button class="btn-sso" id="ssoGoogle">
+            <svg viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+              <path fill="#FBBC05" d="M5.28 14.27A7.17 7.17 0 0 1 4.9 12c0-.79.14-1.57.38-2.27V6.58H1.25A11.96 11.96 0 0 0 0 12c0 1.92.45 3.74 1.25 5.42l4.03-3.15z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+            </svg>
+            Sign in with Google Workspace
+          </button>
+        </div>
+
+        <div class="modal-divider">or authenticate with work email</div>
+
+        <form id="enterpriseForm">
+          <div class="form-group">
+            <label class="form-label" for="modalEmail">Corporate Work Email</label>
+            <input class="form-input" id="modalEmail" type="email" placeholder="agronomist@agribusiness.com" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="modalPassword">Enterprise Password</label>
+            <div class="form-input-wrap">
+              <input class="form-input" id="modalPassword" type="password" placeholder="••••••••••••" required />
+              <button type="button" class="pwd-toggle-btn" id="pwdToggle" aria-label="Toggle password visibility">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/></svg>
+              </button>
+            </div>
+
+            <!-- 4-State Password Strength Meter -->
+            <div class="pwd-strength-container">
+              <div class="pwd-meter-bars">
+                <div class="pwd-meter-bar"></div>
+                <div class="pwd-meter-bar"></div>
+                <div class="pwd-meter-bar"></div>
+                <div class="pwd-meter-bar"></div>
+              </div>
+              <span class="pwd-strength-text" id="pwdStrengthText">Enter a work password</span>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-submit-provision" id="btnSubmitProvision">Provision Farmora Sandbox</button>
+        </form>
+
+        <!-- Simulated Azure 3-Step Sandbox Provisioning Flow -->
+        <div class="provision-progress-wrap" id="provisionProgressWrap">
+          <div class="provision-step" id="provStep1">
+            <span class="prov-spinner"></span>
+            <span>Allocating tenant workspace in Azure South Africa West...</span>
+          </div>
+          <div class="provision-step" id="provStep2">
+            <span class="prov-spinner"></span>
+            <span>Connecting Sentinel-2 &amp; PlanetScope spectral data streams...</span>
+          </div>
+          <div class="provision-step" id="provStep3">
+            <span class="prov-spinner"></span>
+            <span>Calibrating regional soil moisture &amp; agronomic models...</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</footer>
 
-<script src="assets/app.js?v=1"></script>
+  <script src="assets/app.js"></script>
 </body>
 </html>

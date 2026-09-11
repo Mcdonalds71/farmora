@@ -1,62 +1,248 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Create your account — Farmora</title>
-<meta name="description" content="Create your Farmora workspace and start monitoring your fields with AI." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Figtree:wght@500;600;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="assets/styles.css?v=1" />
-<link rel="icon" type="image/png" href="assets/logo-mark.png?v=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Provision Enterprise Sandbox — Farmora</title>
+  <meta name="description" content="Request an enterprise Farmora workspace to monitor your commercial arable hectares with AI." />
+  <link rel="icon" type="image/png" href="assets/logo-mark.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
-<body>
-<div class="auth">
-  <aside class="auth__aside">
-    <a href="index.html" class="brand" style="color:#fff">
-      <span class="brand__mark"><img src="assets/logo-mark.png?v=1" alt="Farmora logo"></span>
-      Farmora
-    </a>
-    <div>
-      <span style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;display:inline-flex;align-items:center;gap:8px;padding:7px 16px;border-radius:999px;font-size:.82rem;font-weight:700"><i style="width:7px;height:7px;border-radius:50%;background:#4CAF50;display:inline-block"></i> Live — transparent pricing</span>
-      <p class="auth__quote" style="margin-top:20px">Connect your fields and get your first health report today.</p>
-      <ul class="auth__points">
-        <li><span class="ic"><svg viewBox="0 0 24 24" width="12" height="12" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span> No credit card required</li>
-        <li><span class="ic"><svg viewBox="0 0 24 24" width="12" height="12" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Set up in a day</li>
-        <li><span class="ic"><svg viewBox="0 0 24 24" width="12" height="12" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span> First report in 24 hours</li>
-      </ul>
-    </div>
-    <p style="font-size:.8rem;color:rgba(255,255,255,.45)">© 2026 Farmora, Inc.</p>
-  </aside>
-  <main class="auth__main">
-    <div class="auth__card">
-      <a href="index.html" class="auth__back"><svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to site</a>
-      <h1>Create your account</h1>
-      <p class="sub">Start your Farmora workspace today.</p>
-      <div class="oauth">
-        <button type="button">
-          <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.5 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.9a5 5 0 01-2.2 3.3v2.7h3.5c2-1.9 3.3-4.7 3.3-7.8z"/><path fill="#34A853" d="M12 23c3 0 5.5-1 7.3-2.7l-3.5-2.7c-1 .7-2.3 1.1-3.8 1.1-2.9 0-5.3-2-6.2-4.6H2.2v2.8A11 11 0 0012 23z"/><path fill="#FBBC05" d="M5.8 14.1a6.6 6.6 0 010-4.2V7.1H2.2a11 11 0 000 9.8z"/><path fill="#EA4335" d="M12 5.4c1.6 0 3 .6 4.2 1.6l3.1-3.1A11 11 0 002.2 7.1l3.6 2.8C6.7 7.3 9.1 5.4 12 5.4z"/></svg>
-          Sign up with Google
-        </button>
-      </div>
-      <div class="divider">or with email</div>
-      <form id="signupForm" novalidate>
-        <div class="field"><label for="fullname">Full name</label><input id="fullname" type="text" placeholder="Jane Doe" required /></div>
-        <div class="field"><label for="org">Company or organization</label><input id="org" type="text" placeholder="Your company or organization" required /></div>
-        <div class="field"><label for="email">Work email</label><input id="email" type="email" placeholder="you@company.com" required /></div>
-        <div class="field">
-          <label for="password">Password</label>
-          <input id="password" type="password" placeholder="At least 8 characters" required />
-          <div class="strength"><i id="strengthBar"></i></div>
+<body class="page-auth">
+
+  <div class="auth-page">
+    <!-- Aside Column -->
+    <aside class="auth-aside">
+      <a href="index.html" class="auth-brand">
+        <img src="assets/logo-mark.png" alt="Farmora" />
+        <span>Farmora</span>
+      </a>
+
+      <div class="auth-aside-content">
+        <div class="auth-quote-badge">
+          <span>●</span>
+          <span>Enterprise Agronomic AI</span>
         </div>
-        <label class="checkbox" style="margin-top:14px"><input type="checkbox" required /> I agree to the <a href="terms.html" style="color:var(--green-600);font-weight:700">Terms</a> &amp; <a href="privacy.html" style="color:var(--green-600);font-weight:700">Privacy Policy</a>.</label>
-        <button type="submit" data-label="Create account" class="btn btn--green btn--block btn--lg" style="margin-top:18px">Create account</button>
-      </form>
-      <p class="auth__foot">Already have an account? <a href="login.html">Log in</a></p>
-    </div>
-  </main>
-</div>
-<script src="assets/app.js?v=1"></script>
+
+        <p class="auth-quote-text">
+          "We engineered Farmora specifically for African soil and weather variability. Commercial plantations can now predict moisture deficits and fungal stress weeks before yield collapse."
+        </p>
+
+        <div class="auth-quote-author">
+          <img class="auth-quote-avatar" src="assets/team/ebele_nnaji.jpg" alt="Ebele Nnaji" />
+          <div class="auth-quote-meta">
+            <b>Ebele Nnaji</b>
+            <span>Co-founder &amp; Chief Executive Officer, Farmora</span>
+          </div>
+        </div>
+
+        <div class="auth-feature-list">
+          <div class="auth-feature-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Tenant data isolation with NDPR &amp; SOC 2 Type II compliance</span>
+          </div>
+          <div class="auth-feature-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Live calibration to Nigerian soil and crop varieties</span>
+          </div>
+          <div class="auth-feature-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Dedicated Agronomic Success Manager on-site</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="auth-aside-footer">
+        Farmora Agrisystems Technologies Nigeria Limited · CAC / RC 1894021 · Azure South Africa West
+      </div>
+    </aside>
+
+    <!-- Main Form Column -->
+    <main class="auth-main">
+      <div class="auth-card-wrap">
+        <a href="index.html" class="auth-back-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Back to Farmora
+        </a>
+
+        <h1 class="auth-h1">Provision Enterprise Sandbox</h1>
+        <p class="auth-sub">Set up your dedicated Farmora workspace on Azure South Africa West.</p>
+
+        <!-- SSO Providers -->
+        <div class="sso-buttons-group">
+          <button class="btn-sso" type="button" onclick="alert('Redirecting to Microsoft Entra ID Enterprise Provisioning...');">
+            <svg viewBox="0 0 23 23">
+              <path fill="#f35325" d="M1 1h10v10H1z"/>
+              <path fill="#81bc06" d="M12 1h10v10H12z"/>
+              <path fill="#05a6f0" d="M1 12h10v10H1z"/>
+              <path fill="#ffba08" d="M12 12h10v10H12z"/>
+            </svg>
+            Continue with Microsoft Entra ID
+          </button>
+          <button class="btn-sso" type="button" onclick="alert('Redirecting to Google Workspace Enterprise Provisioning...');">
+            <svg viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+              <path fill="#FBBC05" d="M5.28 14.27A7.17 7.17 0 0 1 4.9 12c0-.79.14-1.57.38-2.27V6.58H1.25A11.96 11.96 0 0 0 0 12c0 1.92.45 3.74 1.25 5.42l4.03-3.15z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+            </svg>
+            Continue with Google Workspace
+          </button>
+        </div>
+
+        <div class="modal-divider">or configure with corporate email</div>
+
+        <form id="signupForm">
+          <div class="form-group">
+            <label class="form-label" for="signupName">Full Legal Name</label>
+            <input class="form-input" id="signupName" type="text" placeholder="Dr. Ibrahim Danladi" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="signupOrg">Agribusiness / Commercial Entity</label>
+            <input class="form-input" id="signupOrg" type="text" placeholder="Olam Agri Outgrower Command" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="signupEmail">Corporate Work Email</label>
+            <input class="form-input" id="signupEmail" type="email" placeholder="i.danladi@olam.com" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="signupPassword">Enterprise Password</label>
+            <div class="form-input-wrap">
+              <input class="form-input" id="signupPassword" type="password" placeholder="••••••••••••" required />
+              <button type="button" class="pwd-toggle-btn" id="signupPwdToggle" aria-label="Toggle password visibility">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/></svg>
+              </button>
+            </div>
+
+            <!-- 4-State Password Strength Meter -->
+            <div class="pwd-strength-container">
+              <div class="pwd-meter-bars">
+                <div class="pwd-meter-bar" id="sb1"></div>
+                <div class="pwd-meter-bar" id="sb2"></div>
+                <div class="pwd-meter-bar" id="sb3"></div>
+                <div class="pwd-meter-bar" id="sb4"></div>
+              </div>
+              <span class="pwd-strength-text" id="signupPwdStrengthText">Enter a strong work password</span>
+            </div>
+          </div>
+
+          <div style="margin-top: 14px; margin-bottom: 24px;">
+            <label style="font-size: 12px; color: var(--color-muted); display: flex; align-items: flex-start; gap: 8px; cursor: pointer;">
+              <input type="checkbox" required style="margin-top: 2px;" />
+              <span>I agree to the <a href="terms.html" style="color: var(--color-forest); font-weight: 600; text-decoration: underline;">Terms of Service</a> and <a href="privacy.html" style="color: var(--color-forest); font-weight: 600; text-decoration: underline;">Privacy Policy</a> under Nigerian regulatory jurisdiction.</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn-submit-provision" id="btnSignupSubmit">Provision Farmora Sandbox</button>
+        </form>
+
+        <!-- Simulated Provisioning Step Output -->
+        <div class="provision-progress-wrap" id="signupProvisionProgress" style="display: none; margin-top: 24px;">
+          <div class="provision-step" id="spStep1">
+            <span class="prov-spinner"></span>
+            <span>Allocating tenant workspace in Azure South Africa West...</span>
+          </div>
+          <div class="provision-step" id="spStep2">
+            <span class="prov-spinner"></span>
+            <span>Connecting Sentinel-2 &amp; PlanetScope spectral data streams...</span>
+          </div>
+          <div class="provision-step" id="spStep3">
+            <span class="prov-spinner"></span>
+            <span>Calibrating regional soil moisture &amp; agronomic models...</span>
+          </div>
+        </div>
+
+        <div class="auth-switch">
+          Already have an enterprise account? <a href="login.html">Sign in here</a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const pwdInput = document.getElementById('signupPassword');
+    const pwdToggle = document.getElementById('signupPwdToggle');
+    const bars = [document.getElementById('sb1'), document.getElementById('sb2'), document.getElementById('sb3'), document.getElementById('sb4')];
+    const strengthText = document.getElementById('signupPwdStrengthText');
+    const form = document.getElementById('signupForm');
+    const provWrap = document.getElementById('signupProvisionProgress');
+    const submitBtn = document.getElementById('btnSignupSubmit');
+
+    if (pwdToggle && pwdInput) {
+      pwdToggle.addEventListener('click', () => {
+        const isPassword = pwdInput.type === 'password';
+        pwdInput.type = isPassword ? 'text' : 'password';
+        pwdToggle.innerHTML = isPassword 
+          ? `<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 11-4.24-4.24M1 1l22 22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`
+          : `<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/></svg>`;
+      });
+    }
+
+    if (pwdInput && bars.length && strengthText) {
+      pwdInput.addEventListener('input', () => {
+        const val = pwdInput.value;
+        let score = 0;
+        if (val.length >= 8) score++;
+        if (/[0-9]/.test(val)) score++;
+        if (/[A-Z]/.test(val)) score++;
+        if (/[^A-Za-z0-9]/.test(val)) score++;
+
+        bars.forEach((bar, idx) => {
+          if (idx < score) {
+            if (score === 1) bar.style.backgroundColor = '#E11D48';
+            else if (score === 2) bar.style.backgroundColor = '#F59E0B';
+            else if (score === 3) bar.style.backgroundColor = '#3B82F6';
+            else bar.style.backgroundColor = '#16A34A';
+          } else {
+            bar.style.backgroundColor = '#E8E5DF';
+          }
+        });
+
+        const labels = ['Enter a work password', 'Weak password', 'Fair security', 'Good security', 'Enterprise strong (Entra verified)'];
+        strengthText.textContent = labels[score];
+        strengthText.style.color = score === 4 ? '#16A34A' : (score > 1 ? '#4B5563' : '#9CA3AF');
+      });
+    }
+
+    if (form && provWrap) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Provisioning Azure South Africa West Tenant...";
+        provWrap.style.display = 'block';
+
+        const s1 = document.getElementById('spStep1');
+        const s2 = document.getElementById('spStep2');
+        const s3 = document.getElementById('spStep3');
+
+        setTimeout(() => {
+          s1.innerHTML = `<span class="prov-done-icon">✓</span> Tenant workspace provisioned in Azure South Africa West`;
+          s1.style.color = '#16A34A';
+        }, 1200);
+
+        setTimeout(() => {
+          s2.innerHTML = `<span class="prov-done-icon">✓</span> Sentinel-2 & PlanetScope satellite pipelines calibrated`;
+          s2.style.color = '#16A34A';
+        }, 2500);
+
+        setTimeout(() => {
+          s3.innerHTML = `<span class="prov-done-icon">✓</span> Nigerian soil moisture & crop phenology cluster initialized!`;
+          s3.style.color = '#16A34A';
+          submitBtn.textContent = "Ready — Entering Console...";
+          submitBtn.style.background = "#16A34A";
+          setTimeout(() => {
+            alert("Workspace ready! Redirecting to Farmora Agrisystems Console.");
+            window.location.href = 'index.html#console';
+          }, 1200);
+        }, 3800);
+      });
+    }
+  </script>
 </body>
 </html>
