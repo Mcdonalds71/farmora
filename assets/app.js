@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initConsoleLayers();
   initEnterpriseModal();
   initMobileDrawer();
+  initScrollNav();
 });
 
 /* --------------------------------------------------------------------------
@@ -386,6 +387,21 @@ function initMobileDrawer() {
     if (e.key === 'Escape' && drawer.classList.contains('open')) {
       drawer.classList.remove('open');
       document.body.style.overflow = '';
+    }
+  });
+}
+
+/* --------------------------------------------------------------------------
+   7. SCROLL NAV BACKGROUND
+   -------------------------------------------------------------------------- */
+function initScrollNav() {
+  const nav = document.querySelector('.nav');
+  if (!nav) return;
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      nav.classList.add('nav-scrolled');
+    } else {
+      nav.classList.remove('nav-scrolled');
     }
   });
 }

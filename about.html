@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Company | Farmora</title>
+  <meta name="description" content="Farmora ingests multispectral satellite NDVI, IoT soil moisture probes, and microclimate telemetry across 480,000+ hectares—detecting moisture deficits, fungal stress, and nitrogen anomalies before visible crop damage." />
+  <meta property="og:title" content="Farmora | AI for precision agriculture &amp; field intelligence" />
+  <meta property="og:description" content="Farmora ingests multispectral satellite NDVI, IoT soil moisture probes, and microclimate telemetry across 480,000+ hectares—detecting moisture deficits, fungal stress, and nitrogen anomalies before visible crop damage." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href="assets/logo-mark.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+  <!-- ======================================================================
+       HEADER / NAVIGATION (Rulebase Floating Architectural Bar)
+       ====================================================================== -->
+  <header class="nav">
+    <a href="index.html" class="nav-logo" aria-label="Farmora — Home">
+      <div class="nav-logo-mark">
+        <img src="assets/logo-mark.png" alt="Farmora" />
+      </div>
+      <span>Farmora</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary Navigation">
+      <div class="nav-dropdown">
+        <a href="solution.html" class="nav-dropdown-trigger">Platform <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 2px;"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+        <div class="nav-dropdown-menu">
+          <a href="solution.html#problem">The Blindspot</a>
+          <a href="solution.html#solution">Our Solution</a>
+        </div>
+      </div>
+      <a href="technology.html">Technology</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="security.html">Security</a>
+      <a href="about.html">Company</a>
+    </nav>
+
+    <button class="nav-cta trigger-modal">Get Started</button>
+
+    <button class="nav-burger" id="navBurger" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-content">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 16px;">
+        <span style="font-weight: 700; color: #FFFFFF; font-size: 18px;">Farmora</span>
+        <button id="mobileDrawerClose" style="color: #FFFFFF; font-size: 20px;">✕</button>
+      </div>
+      <div class="mobile-drawer-links">
+        <a href="solution.html">Platform</a>
+        <a href="technology.html">Technology</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="security.html">Security</a>
+        <a href="about.html">Company</a>
+      </div>
+      <button class="btn-demo-light trigger-modal" style="width: 100%; margin-top: auto;">Get Started</button>
+    </div>
+  </div>
+
+  <main>
+
+    <section class="hero" style="min-height: 500px; padding-bottom: 60px;">
+      <div style="position: absolute; top:0; left:0; right:0; bottom:0; background: url('https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=1600&q=80') center/cover; opacity: 0.3; z-index: 1;"></div>
+      <div style="position: absolute; top:0; left:0; right:0; bottom:0; background: linear-gradient(to bottom, rgba(18,20,18,0.2) 0%, rgba(18,20,18,1) 100%); z-index: 2;"></div>
+      <div class="hero-inner" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; width: 100%; z-index: 3;">
+        <div class="hero-content" style="width: 100%; max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center;">
+          <span class="pill-badge" style="margin-bottom: 24px;">OUR COMPANY</span>
+          <h1 class="hero-h1" style="width: 100%;">Built by agronomists and AI researchers in Nigeria.</h1>
+          <p class="hero-body" style="text-align: center; max-width: 700px;">We know what happens when rain patterns shift and inputs are wasted. Farmora exists to secure African and global food systems through deterministic AI.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="social-section" style="background: var(--color-bg);">
+      <div class="social-inner">
+        <div class="social-left">
+          <h2>Agronomy first. <br><span style="color: var(--color-forest);">Technology second.</span></h2>
+          <p style="font-size: 16px; line-height: 1.8; margin-top: 24px; color: var(--color-text);">We didn't start in a Silicon Valley garage. Farmora was born out of the necessity to manage sprawling commercial estates in Northern Nigeria, where connectivity is sparse and the cost of nitrogen fertilizer can break a season's margin.<br><br>Our hardware and ML pipelines are built to be extremely resilient, optimizing every drop of water and kilogram of input to protect both commercial yields and local soil ecology.</p>
+        </div>
+        <div class="social-right" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+          <div style="flex: 1; background: var(--color-card); border: 1px solid var(--color-border); border-radius: 8px; padding: 32px;">
+            <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 12px; color: var(--color-text);">Field-Tested Resilience</h3>
+            <p style="font-size: 14px; line-height: 1.6; color: var(--color-subtle);">Designed for low-connectivity, high-heat environments. If it works in the Sahel, it works anywhere.</p>
+          </div>
+          <div style="flex: 1; background: var(--color-card); border: 1px solid var(--color-border); border-radius: 8px; padding: 32px;">
+            <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 12px; color: var(--color-text);">Yield Without Waste</h3>
+            <p style="font-size: 14px; line-height: 1.6; color: var(--color-subtle);">We don't build dashboards; we build decision engines that trigger physical action in the field.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  
+<section class="team-section" id="team">
+      <div class="team-inner">
+        <div class="team-header">
+          <h2>Built by agronomists and AI engineers who know African soil.</h2>
+          <p>Built in Nigeria · Expanding across Africa · Powering 480,000+ commercial hectares.</p>
+        </div>
+
+        <div class="team-grid">
+          <!-- Team Member 1 -->
+          <div class="team-card">
+            <div class="team-photo-wrap">
+              <img class="team-photo" src="assets/team/ebele_nnaji.jpg" alt="Ebele Nnaji" />
+            </div>
+            <div class="team-card-info">
+              <h3 class="team-name">Ebele Nnaji</h3>
+              <div class="team-role">Co-founder &amp; CEO</div>
+              <p class="team-bio">Raised on commercial grain farmland in Kaduna; formerly led operational agronomy at regional agro-cooperatives before founding Farmora.</p>
+              <div class="team-card-footer">
+                <span style="font-size: 11px; font-family: var(--font-mono); color: var(--color-muted);">Lagos, Nigeria</span>
+                <a class="team-social-link" href="https://linkedin.com" target="_blank" rel="noopener" aria-label="Ebele Nnaji LinkedIn">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25a1.64 1.64 0 0 0-1.66 1.64c0 .9.74 1.63 1.66 1.63.92 0 1.66-.73 1.66-1.63 0-.9-.74-1.64-1.66-1.64z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Member 2 -->
+          <div class="team-card">
+            <div class="team-photo-wrap">
+              <img class="team-photo" src="assets/team/tochukwu_okereke.jpg" alt="Tochukwu Okereke" />
+            </div>
+            <div class="team-card-info">
+              <h3 class="team-name">Tochukwu Okereke</h3>
+              <div class="team-role">Co-founder &amp; CTO</div>
+              <p class="team-bio">Satellite remote-sensing researcher and computer vision architect; built crop canopy stress detection models at African technology hubs.</p>
+              <div class="team-card-footer">
+                <span style="font-size: 11px; font-family: var(--font-mono); color: var(--color-muted);">Lagos, Nigeria</span>
+                <a class="team-social-link" href="https://linkedin.com" target="_blank" rel="noopener" aria-label="Tochukwu Okereke LinkedIn">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25a1.64 1.64 0 0 0-1.66 1.64c0 .9.74 1.63 1.66 1.63.92 0 1.66-.73 1.66-1.63 0-.9-.74-1.64-1.66-1.64z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Member 3 -->
+          <div class="team-card">
+            <div class="team-photo-wrap">
+              <img class="team-photo" src="assets/team/folake_adeleke.jpg" alt="Dr. Folake Adeleke" />
+            </div>
+            <div class="team-card-info">
+              <h3 class="team-name">Dr. Folake Adeleke</h3>
+              <div class="team-role">Head of Agronomic Science</div>
+              <p class="team-bio">PhD in Plant Pathology; 12+ years optimizing commercial grain and outgrower yields across Nigeria, Ghana, and Côte d'Ivoire.</p>
+              <div class="team-card-footer">
+                <span style="font-size: 11px; font-family: var(--font-mono); color: var(--color-muted);">Ibadan, Nigeria</span>
+                <a class="team-social-link" href="https://linkedin.com" target="_blank" rel="noopener" aria-label="Dr. Folake Adeleke LinkedIn">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25a1.64 1.64 0 0 0-1.66 1.64c0 .9.74 1.63 1.66 1.63.92 0 1.66-.73 1.66-1.63 0-.9-.74-1.64-1.66-1.64z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Member 4 -->
+          <div class="team-card">
+            <div class="team-photo-wrap">
+              <img class="team-photo" src="assets/team/chinedu_bakare.jpg" alt="Chinedu Bakare" />
+            </div>
+            <div class="team-card-info">
+              <h3 class="team-name">Chinedu Bakare</h3>
+              <div class="team-role">VP of Field Operations</div>
+              <p class="team-bio">Agricultural mechanization specialist; previously deployed commercial drone spray fleets and IoT soil moisture networks across 200,000ha.</p>
+              <div class="team-card-footer">
+                <span style="font-size: 11px; font-family: var(--font-mono); color: var(--color-muted);">Abuja, Nigeria</span>
+                <a class="team-social-link" href="https://linkedin.com" target="_blank" rel="noopener" aria-label="Chinedu Bakare LinkedIn">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25a1.64 1.64 0 0 0-1.66 1.64c0 .9.74 1.63 1.66 1.63.92 0 1.66-.73 1.66-1.63 0-.9-.74-1.64-1.66-1.64z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+<footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <b>Farmora Agrisystems</b>
+          <p>AI field intelligence and precision yield forecasting for commercial agriculture across Nigeria and Africa.</p>
+          <div class="footer-badges">
+            <div class="cert-badge">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>SOC 2 TYPE II</span>
+            </div>
+            <div class="cert-badge">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <span>NDPR COMPLIANT</span>
+            </div>
+            <div class="cert-badge">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>ISO 27001</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Platform</div>
+          <div class="footer-col-links">
+            <a href="#platform">Crop Health Scoring</a>
+            <a href="#telemetry">Soil Moisture Sensing</a>
+            <a href="#telemetry">Chlorophyll Indexing</a>
+            <a href="#console">Spatial Console</a>
+            <a href="#agribusiness">Variable Spray Maps</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Integrations</div>
+          <div class="footer-col-links">
+            <a href="#platform">John Deere Operations</a>
+            <a href="#platform">DJI Agras Drone Fleets</a>
+            <a href="#platform">Sentinel-2 &amp; Landsat</a>
+            <a href="#platform">AFEX Commodities</a>
+            <a href="#platform">SAP Agribusiness</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Company</div>
+          <div class="footer-col-links">
+            <a href="#team">Leadership Team</a>
+            <a href="#team">Research &amp; Science</a>
+            <a href="login.html">Agribusiness Login</a>
+            <a href="signup.html">Request Field Demo</a>
+            <a href="mailto:operations@farmora.ai">Media Inquiries</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Security &amp; Legal</div>
+          <div class="footer-col-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="privacy.html">Data Sovereignty</a>
+            <a href="terms.html">Outgrower SLA</a>
+            <a href="terms.html">Security Architecture</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-legal-line">
+          <div>
+            <b>Farmora Agrisystems Technologies Nigeria Limited</b> · CAC / RC Registration: <b>RC 1894021</b>
+          </div>
+          <div class="footer-social-icons">
+            <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25a1.64 1.64 0 0 0-1.66 1.64c0 .9.74 1.63 1.66 1.63.92 0 1.66-.73 1.66-1.63 0-.9-.74-1.64-1.66-1.64z"/></svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+          <span>Plot 14, Commercial Avenue, Ikeja Industrial Estate, Lagos, Nigeria · Tel: +234 1 888 3920</span>
+          <span>&copy; 2026 Farmora Agrisystems Technologies Nigeria Limited. All rights reserved.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       ENTERPRISE SSO & AZURE PROVISIONING MODAL (AGENTS.md Rule 3)
+       ====================================================================== -->
+  <div class="modal-overlay" id="enterpriseModal" aria-modal="true" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <h3>Access Farmora Enterprise</h3>
+          <p>Single sign-on for agribusinesses, cooperatives &amp; plantations</p>
+        </div>
+        <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- SSO Providers Group -->
+        <div class="sso-buttons-group">
+          <button class="btn-sso" id="ssoEntra">
+            <svg viewBox="0 0 23 23">
+              <path fill="#f35325" d="M1 1h10v10H1z"/>
+              <path fill="#81bc06" d="M12 1h10v10H12z"/>
+              <path fill="#05a6f0" d="M1 12h10v10H1z"/>
+              <path fill="#ffba08" d="M12 12h10v10H12z"/>
+            </svg>
+            Sign in with Microsoft Entra ID
+          </button>
+          <button class="btn-sso" id="ssoGoogle">
+            <svg viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+              <path fill="#FBBC05" d="M5.28 14.27A7.17 7.17 0 0 1 4.9 12c0-.79.14-1.57.38-2.27V6.58H1.25A11.96 11.96 0 0 0 0 12c0 1.92.45 3.74 1.25 5.42l4.03-3.15z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+            </svg>
+            Sign in with Google Workspace
+          </button>
+        </div>
+
+        <div class="modal-divider">or authenticate with work email</div>
+
+        <form id="enterpriseForm">
+          <div class="form-group">
+            <label class="form-label" for="modalEmail">Corporate Work Email</label>
+            <input class="form-input" id="modalEmail" type="email" placeholder="agronomist@agribusiness.com" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="modalPassword">Enterprise Password</label>
+            <div class="form-input-wrap">
+              <input class="form-input" id="modalPassword" type="password" placeholder="••••••••••••" required />
+              <button type="button" class="pwd-toggle-btn" id="pwdToggle" aria-label="Toggle password visibility">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/></svg>
+              </button>
+            </div>
+
+            <!-- 4-State Password Strength Meter -->
+            <div class="pwd-strength-container">
+              <div class="pwd-meter-bars">
+                <div class="pwd-meter-bar"></div>
+                <div class="pwd-meter-bar"></div>
+                <div class="pwd-meter-bar"></div>
+                <div class="pwd-meter-bar"></div>
+              </div>
+              <span class="pwd-strength-text" id="pwdStrengthText">Enter a work password</span>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-submit-provision" id="btnSubmitProvision">Provision Farmora Sandbox</button>
+        </form>
+
+        <!-- Simulated Azure 3-Step Sandbox Provisioning Flow -->
+        <div class="provision-progress-wrap" id="provisionProgressWrap">
+          <div class="provision-step" id="provStep1">
+            <span class="prov-spinner"></span>
+            <span>Allocating tenant workspace in Azure South Africa West...</span>
+          </div>
+          <div class="provision-step" id="provStep2">
+            <span class="prov-spinner"></span>
+            <span>Connecting Sentinel-2 &amp; PlanetScope spectral data streams...</span>
+          </div>
+          <div class="provision-step" id="provStep3">
+            <span class="prov-spinner"></span>
+            <span>Calibrating regional soil moisture &amp; agronomic models...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

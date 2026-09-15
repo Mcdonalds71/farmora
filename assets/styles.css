@@ -3058,3 +3058,28 @@ button {
   }
 }
 
+
+
+/* Global Mobile Section Padding Adjustments */
+@media (max-width: 900px) {
+  section {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+}
+
+
+/* Scrolled Nav State */
+.nav-scrolled {
+  background: rgba(18, 20, 18, 0.95);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Nav Dropdown */
+.nav-dropdown { position: relative; display: inline-block; }
+.nav-dropdown-trigger { display: inline-flex; align-items: center; gap: 4px; cursor: pointer; }
+.nav-dropdown-menu { position: absolute; top: 100%; left: 0; background: rgba(18, 20, 18, 0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 0; min-width: 180px; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.2s ease; z-index: 1000; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+.nav-dropdown:hover .nav-dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-dropdown-menu a { display: block; padding: 8px 20px; color: #FAF8F5; font-size: 14px; font-weight: 500; transition: background 0.2s; }
+.nav-dropdown-menu a:hover { background: rgba(255,255,255,0.05); }
+

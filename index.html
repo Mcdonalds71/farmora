@@ -28,11 +28,17 @@
     </a>
 
     <nav class="nav-links" aria-label="Primary Navigation">
-      <a href="#platform">Platform</a>
-      <a href="#telemetry">Field Telemetry</a>
-      <a href="#agribusiness">Agribusiness</a>
-      <a href="#console">Console</a>
-      <a href="#team">Company</a>
+      <div class="nav-dropdown">
+        <a href="solution.html" class="nav-dropdown-trigger">Platform <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 2px;"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+        <div class="nav-dropdown-menu">
+          <a href="solution.html#problem">The Blindspot</a>
+          <a href="solution.html#solution">Our Solution</a>
+        </div>
+      </div>
+      <a href="technology.html">Technology</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="security.html">Security</a>
+      <a href="about.html">Company</a>
     </nav>
 
     <button class="nav-cta trigger-modal">Get Started</button>
@@ -51,11 +57,11 @@
         <button id="mobileDrawerClose" style="color: #FFFFFF; font-size: 20px;">✕</button>
       </div>
       <div class="mobile-drawer-links">
-        <a href="#platform">Platform</a>
-        <a href="#telemetry">Field Telemetry</a>
-        <a href="#agribusiness">Agribusiness</a>
-        <a href="#console">Console</a>
-        <a href="#team">Company</a>
+        <a href="solution.html">Platform</a>
+        <a href="technology.html">Technology</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="security.html">Security</a>
+        <a href="about.html">Company</a>
       </div>
       <button class="btn-demo-light trigger-modal" style="width: 100%; margin-top: auto;">Get Started</button>
     </div>
@@ -152,6 +158,18 @@
     <!-- ====================================================================
          SECTION 1: THE PRECISION OPERATING SYSTEM (Rulebase Features Grid)
          ==================================================================== -->
+    
+    <!-- SECTION: BUILT FOR -->
+    <!-- ====================================================================
+         SECTION: BUILT FOR
+         ==================================================================== -->
+    <section class="social-section" id="built-for" style="text-align: center;">
+      <div class="social-inner" style="display: block; max-width: 800px; padding: 0 20px;">
+        <h2 style="font-size: clamp(24px, 4vw, 32px); line-height: 1.3; color: var(--color-text); margin-bottom: 16px;">Built for teams who manage agronomy at scale: <br><span style="color: var(--color-forest);">Commercial Farm Directors | Precision Agronomists | Outgrower Coordinators</span></h2>
+        <p style="font-size: 16px; color: var(--color-text); opacity: 0.8;">Farmora is engineered for enterprise agricultural operations that cannot rely on manual scouting to protect thousands of hectares.</p>
+      </div>
+    </section>
+
     <section class="features-section" id="platform">
       <div class="features-head">
         <h2>The operating system for commercial agriculture</h2>
@@ -324,6 +342,103 @@
         </div>
       </div>
     </section>
+
+    <!-- ====================================================================
+         SECTION: THREE PILLARS
+         ==================================================================== -->
+    <section class="features-section" id="three-pillars" style="background: var(--color-bg);">
+      <div class="features-head">
+        <h2>Three pillars of autonomous crop protection.</h2>
+      </div>
+      <div class="features-cards-grid">
+        <div class="feature-card">
+          <div class="feature-card-info">
+            <h3 class="feature-card-title" style="margin-bottom: 12px; font-size: 20px;">It detects stress invisibly</h3>
+            <p class="feature-card-desc">Ingests multi-spectral imagery to find early leaf blight or nitrogen deficit weeks before it becomes visible to the human eye.</p>
+            <div style="margin-top: 16px; font-family: 'Geist Mono', monospace; font-size: 13px; color: var(--color-forest); font-weight: 600;">[VIGOR SCORE: 94/100] — Optimal</div>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card-info">
+            <h3 class="feature-card-title" style="margin-bottom: 12px; font-size: 20px;">It automates prescriptions</h3>
+            <p class="feature-card-desc">Turns sensor anomalies into actionable variable-rate field directives instantly for your machinery and drones.</p>
+            <div style="margin-top: 16px; font-family: 'Geist Mono', monospace; font-size: 13px; color: var(--color-forest); font-weight: 600;">[EXPORT] — ISO-XML Ready</div>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card-info">
+            <h3 class="feature-card-title" style="margin-bottom: 12px; font-size: 20px;">It proves yield outcomes</h3>
+            <p class="feature-card-desc">Tracks sequestered organic carbon and regenerative soil health over successive cropping seasons to prove ROI.</p>
+            <div style="margin-top: 16px; font-family: 'Geist Mono', monospace; font-size: 13px; color: var(--color-forest); font-weight: 600;">[YIELD EST] — 14.2 T/Ha</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION: PROBLEM VS PRODUCT
+         ==================================================================== -->
+    <section class="social-section" id="problem-vs" style="padding: 100px 36px; background: var(--color-dark); color: #fff;">
+  <div style="max-width: 1440px; margin: 0 auto; text-align: center; margin-bottom: 60px;">
+    <h2 style="font-size: clamp(28px, 4vw, 42px); line-height: 1.1; margin-bottom: 16px;">The cost of blindspots.</h2>
+    <p style="color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto; font-size: 16px;">Relying on manual field walks means you only detect problems after they've caused irreversible yield loss.</p>
+  </div>
+  
+  <div class="social-inner" style="gap: 40px; align-items: stretch;">
+    <!-- Bad / Traditional -->
+    <div class="social-left" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,107,107,0.2); border-radius: 12px; padding: 40px; display: flex; flex-direction: column;">
+      <div style="display: flex; align-items: center; margin-bottom: 32px;">
+        <div style="width: 48px; height: 48px; background: rgba(255,107,107,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 16px;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff6b6b" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <div>
+          <h3 style="font-size: 20px; font-weight: 600; color: #ff6b6b;">Manual Scouting</h3>
+          <span style="font-size: 13px; color: rgba(255,255,255,0.5);">Reactive & Incomplete</span>
+        </div>
+      </div>
+      
+      <div style="flex: 1; font-size: 15px; color: rgba(255,255,255,0.8); line-height: 1.7;">
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px;">
+          <li style="display: flex; align-items: flex-start;"><span style="color: #ff6b6b; margin-right: 12px;">✕</span> Takes 3-5 days to walk a 2,000Ha sector</li>
+          <li style="display: flex; align-items: flex-start;"><span style="color: #ff6b6b; margin-right: 12px;">✕</span> Only detects stress when physical wilting occurs</li>
+          <li style="display: flex; align-items: flex-start;"><span style="color: #ff6b6b; margin-right: 12px;">✕</span> Subjective analysis leads to blanket chemical spraying</li>
+          <li style="display: flex; align-items: flex-start;"><span style="color: #ff6b6b; margin-right: 12px;">✕</span> Impossible to prove ROI or track carbon baseline</li>
+        </ul>
+      </div>
+      
+      <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); font-family: 'Geist Mono', monospace; font-size: 12px; color: #ff6b6b;">
+        RESULT: 15-20% AVERAGE YIELD LOSS
+      </div>
+    </div>
+    
+    <!-- Good / Farmora -->
+    <div class="social-right" style="background: rgba(34,139,34,0.05); border: 1px solid var(--color-forest); border-radius: 12px; padding: 40px; display: flex; flex-direction: column; box-shadow: 0 0 40px rgba(34,139,34,0.1);">
+      <div style="display: flex; align-items: center; margin-bottom: 32px;">
+        <div style="width: 48px; height: 48px; background: var(--color-forest); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 16px;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div>
+          <h3 style="font-size: 20px; font-weight: 600; color: #fff;">Farmora Autonomous AI</h3>
+          <span style="font-size: 13px; color: var(--color-forest);">Continuous & Deterministic</span>
+        </div>
+      </div>
+      
+      <div style="flex: 1; font-size: 15px; color: rgba(255,255,255,0.9); line-height: 1.7;">
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px;">
+          <li style="display: flex; align-items: flex-start;"><span style="color: var(--color-forest); margin-right: 12px;">✓</span> 100% field coverage updated every 24-48 hours</li>
+          <li style="display: flex; align-items: flex-start;"><span style="color: var(--color-forest); margin-right: 12px;">✓</span> Detects sub-surface root moisture stress pre-wilting</li>
+          <li style="display: flex; align-items: flex-start;"><span style="color: var(--color-forest); margin-right: 12px;">✓</span> Generates exact coordinate prescriptions (Rx) for drones</li>
+          <li style="display: flex; align-items: flex-start;"><span style="color: var(--color-forest); margin-right: 12px;">✓</span> Creates auditable yield & biomass telemetry logs</li>
+        </ul>
+      </div>
+      
+      <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--color-forest); display: flex; justify-content: space-between;">
+        <span>RESULT: PROTECTED MARGINS</span>
+        <span>[ACTIVE: 480K Ha]</span>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- ====================================================================
          SECTION 2: PROOF & SOCIAL METRICS STRIP (Rulebase Social Section)
@@ -656,6 +771,38 @@
     <!-- ====================================================================
          SECTION 7: AUTHENTIC NIGERIAN LEADERSHIP TEAM (Mandatory Rule)
          ==================================================================== -->
+    <!-- ====================================================================
+         SECTION: ROADMAP
+         ==================================================================== -->
+    <section class="features-section" id="roadmap">
+      <div class="features-head">
+        <h2>Product Roadmap</h2>
+      </div>
+      <div class="features-cards-grid">
+        <div class="feature-card" style="border-top: 3px solid var(--color-forest);">
+          <div class="feature-card-info">
+            <span style="font-family: 'Geist Mono', monospace; font-size: 11px; font-weight: 600; color: var(--color-forest); display: block; margin-bottom: 8px;">SHIPPED</span>
+            <h3 class="feature-card-title" style="margin-bottom: 8px;">NDVI Anomaly Engine</h3>
+            <p class="feature-card-desc">Continuous field-level scoring.</p>
+          </div>
+        </div>
+        <div class="feature-card" style="border-top: 3px solid #F59E0B;">
+          <div class="feature-card-info">
+            <span style="font-family: 'Geist Mono', monospace; font-size: 11px; font-weight: 600; color: #F59E0B; display: block; margin-bottom: 8px;">IN PROGRESS</span>
+            <h3 class="feature-card-title" style="margin-bottom: 8px;">Automated Drone Dispatch</h3>
+            <p class="feature-card-desc">Direct integration with DJI Agras.</p>
+          </div>
+        </div>
+        <div class="feature-card" style="opacity: 0.7;">
+          <div class="feature-card-info">
+            <span style="font-family: 'Geist Mono', monospace; font-size: 11px; font-weight: 600; color: #9CA3AF; display: block; margin-bottom: 8px;">PLANNED</span>
+            <h3 class="feature-card-title" style="margin-bottom: 8px;">Carbon Credit Ledger</h3>
+            <p class="feature-card-desc">Immutable soil health tracking.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="team-section" id="team">
       <div class="team-inner">
         <div class="team-header">
