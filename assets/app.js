@@ -136,7 +136,7 @@ function initWorkforceTabs() {
     "drone": {
       score: "96",
       scoreTitle: "Autonomous Scout Coverage",
-      scoreSub: "DJI Agras T40 coordinated flight plan — 480ha scanned in 3.4 hrs.",
+      scoreSub: "DJI Agras T40 coordinated flight plan — 48ha scanned in 35 mins.",
       checks: [
         { label: "Canopy thermal envelope within normal range?", status: "Passed 98/100" },
         { label: "Edge weed infestation below 4% threshold?", status: "Passed" },
